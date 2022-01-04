@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+:root {
+    --background: #142129;
+    --main: transparent;
+    --details: #57A773;
+    --minor_details: #f1619d;
+    --details-active: #57A773;
+}
+
+body {
+    background-image: url(src/background.jpg);
+    background-size: 100vh;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.loginFrame {
+    background-color: var(--main);
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    box-shadow: #000 -5px 5px 8px;
+    margin: -150px 0 0 -150px;
+}
+
+.login {
+    color: rgb(223, 219, 219);
+    text-align: left;
+    background-color: var(--main);
+    font-size: 15px;
+    height: 30px;
+    width: 80%;
+    border-bottom: 4px solid var(--details);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#userLogo {
+    color: rgb(223, 219, 219);
+    position: absolute;
+    font-size: 20px;
+    top: 42%;
+    left: 7%;
+}
+
+#passwordLogo {
+    color: rgb(223, 219, 219);
+    position: absolute;
+    font-size: 20px;
+    top: 57%;
+    left: 7%;
+}
+
+.login::placeholder {
+    color: rgb(223, 219, 219);
+}
+
+.login:hover {
+    border: 2px solid var(--minor_details);
+    color: var(--minor_details);
+}
+
+.pageTitle {
+    text-align: left;
+    position: absolute;
+    top: -5%;
+    border-bottom: 7px solid var(--details);
+    padding-bottom: 10px;
+    padding-right: 45px;
+    left: 10%;
+    font-size: 50px;
+    color: rgb(223, 219, 219);
+}
+
+#username {
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    margin: -15px 0 0 -120px;
+    transition: all 0.2s;
+}
+
+.login:focus::placeholder {
+    color: transparent;
+}
+
+#username:focus {
+    width: 90%;
+    border: 2px solid var(--details-active);
+    color: var(--details-active);
+    outline: none;
+    transition: all 0.2s;
+}
+
+#password {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    margin: -15px 0 0 -120px;
+}
+
+#password:focus {
+    width: 90%;
+    border: 2px solid var(--details-active);
+    color: var(--details-active);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.button {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--main);
+    font-size: 15px;
+    color: rgb(223, 219, 219);
+    height: 40px;
+    width: 40%;
+    border: 2px solid var(--details);
+    border-radius: 20px;
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    margin: -20px 0 0 -60px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    width: 74%;
+    font-size: 18px;
+    transition: all 0.2s;
+    color: var(--details-active);
+    border-radius: 25px;
+    border: 2px solid var(--details-active);
+}
