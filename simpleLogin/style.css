@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+:root {
+    --background: #142129;
+    --main: #1C2541;
+    --details: #EE4266;
+    --minor_details: #f1619d;
+    --details-active: #57A773;
+    --placeholder: rgba(250, 79, 79, 0.4);
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.loginFrame {
+    background-color: var(--main);
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -150px;
+    border: 2px solid var(--details);
+    box-shadow: #000 3px 3px 5px;
+}
+
+.login {
+    justify-content: center;
+    color: var(--details);
+    text-align: center;
+    background-color: var(--main);
+    height: 30px;
+    width: 80%;
+    border: 2px solid var(--details);
+    border-radius: 20px;
+}
+
+.login::placeholder {
+    color: var(--placeholder);
+}
+
+.login:hover {
+    border: 2px solid var(--minor_details);
+    color: var(--minor_details);
+}
+
+.pageTitle {
+    text-align: center;
+    color: var(--details);
+}
+
+#username {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin: -15px 0 0 -120px;
+    transition: all 0.2s;
+}
+
+.login:focus::placeholder {
+    color: transparent;
+}
+
+#username:focus {
+    width: 90%;
+    margin: -15px 0 0 -135px;
+    border: 2px solid var(--details-active);
+    color: var(--details-active);
+    outline: none;
+    transition: all 0.2s;
+}
+
+#password {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -15px 0 0 -120px;
+}
+
+#password:focus {
+    width: 90%;
+    margin: -15px 0 0 -135px;
+    border: 2px solid var(--details-active);
+    color: var(--details-active);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.button {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--main);
+    font-size: 15px;
+    color: var(--details);
+    height: 40px;
+    width: 40%;
+    border: 2px solid var(--details);
+    border-radius: 20px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin: -20px 0 0 -60px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    height: 44px;
+    width: 74%;
+    font-size: 18px;
+    transition: all 0.2s;
+    color: var(--details-active);
+    margin: -22px 0 0 -111px;
+    border-radius: 25px;
+    border: 2px solid var(--details-active);
+}

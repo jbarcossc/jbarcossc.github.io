@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Countdown</title>
+        <link rel="icon" href="src/timer.ico">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", inicial-scale="1.0">
+    </head>
+    <body>
+        <h1> Date Countdown</h1>
+        
+        <div class="containers">
+            <div class="days">
+                <p class="text" id="days">0</p>
+                <span class="bot-text">days</span>
+            </div>
+            <div class="hours">
+                <p class="text" id="hours">0</p>
+                <span class="bot-text">hours</span>
+            </div>
+            <div class="mins">
+                <p class="text" id="mins">0</p>
+                <span class="bot-text">minutes</span>
+            </div>
+            <div class="secs">
+                <p class="text" id="secs">0</p>
+                <span class="bot-text">seconds</span>
+            </div>
+        </div>
+
+        <div class="input">
+            <form>
+                <input type="date" id="dateInput" value="2021-12-25">
+                <button type="button" id="submitButton" onclick="updateDate()">Enviar</button>
+            </form>
+        </div>
+        
+    </body>
+</html>
