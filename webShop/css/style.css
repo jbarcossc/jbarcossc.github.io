@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap');
+
+:root {
+    --details: #83C5D4;
+    --light-color: #B7BA2F;
+    --light-color-darker: #839e0c;
+    --dark-color: #323844;
+    --darker-color: #222229;
+    --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) ;
+    --border: 3px solid rgba(0, 0, 0, 0.1);
+    --outline: 2px solid rgba(0, 0, 0, 0.1);
+    --outline-hover: 3px solid var(--light-color);
+}
+
+* {
+    font-family: 'Syncopate', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 112px;
+}
+
+body {
+    background-color: var(--dark-color);
+}
+
+.header {
+    background-color: var(--darker-color);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 4%;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo {
+    font-size: 40px;
+    font-weight: bolder;
+    color: var(--details);
+    font-family: 'Bitter', serif;
+}
+
+.header .logo i {
+    color: var(--light-color);
+    padding-right: 15px;
+}
+
+.header .navbar a {
+    font-size: 18px;
+    margin: 0 8px;
+    color: var(--details);
+}
+
+.header .navbar a:hover {
+    color: var(--light-color);
+}
+
+.header .icons div{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 32px;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header .icons div:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
