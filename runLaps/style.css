@@ -30,15 +30,9 @@ body {
     display: flex;
     position: absolute;
     top: 80%;
-    left: 80%;
+    left: calc(50vw - 75px);
 }
 
 #totalNumber {
     margin-left: 15px;
-}
-
-@media (max-width: 800px){
-    .totalLaps {
-        left: 40%;
-    }
 }
