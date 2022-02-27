@@ -36,3 +36,9 @@ body {
 #totalNumber {
     margin-left: 15px;
 }
+
+@media (max-width: 800px){
+    .totalLaps {
+        left: 40%;
+    }
+}
