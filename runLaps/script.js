@@ -1,6 +1,6 @@
 import(Math)
 
-const startDate = new Date('2022-02-28');
+const startDate = new Date('Sun Feb 27 2022 00:00:00 GMT-0300');
 const todayLaps = document.getElementById("lapNumber");
 const todayTotalLaps = document.getElementById("totalNumber");
 const dictCycle = {
@@ -30,8 +30,7 @@ function getLaps(n){
 }
 
 function dayNum(date1, date2){
-    var difference = date2.getTime() - date1.getTime();
-    var days = Math.ceil(difference / (1000 * 3600 * 24)) + 1;
+    var days = date2.getDate() - date1.getDate() + 1;
     return(days);
 }
 
@@ -48,7 +47,6 @@ function getNewLaps(){
     let day = dayNum(startDate, nowDate);
     let today = getLaps(day);
     let total = totalLaps(day);
-
     updateLaps(today, total);
 
 }
