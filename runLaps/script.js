@@ -30,7 +30,7 @@ function getLaps(n){
 }
 
 function dayNum(date1, date2){
-    var days = date2.getDate() - date1.getDate() + 1;
+    var days = Math.round((date2-date1)/(1000*60*60*24)) + 1;
     return(days);
 }
 
