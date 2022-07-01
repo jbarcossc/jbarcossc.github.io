@@ -36,6 +36,13 @@ function draw() {
 document.body.onkeyup = function(e){
   if (e.key == " " || e.code == "Space" || e.keyCode == 32){
     pause = !pause;
+    let pouseP = document.getElementById("pause");
+    pouseP.innerText = "Press SPACE key to";
+    if(pause){
+      pouseP.innerText += " unpause";
+    } else {
+      pouseP.innerText += " pause";
+    }
   }
 }
 
