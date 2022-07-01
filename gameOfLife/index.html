@@ -15,9 +15,11 @@
 
   <body oncontextmenu="return false;">
     <h1>Game of Life</h1>
-    <p id="pause">Press SPACE key to unpause</p>
-    <p>Draw with the mouse LEFT button</p>
-    <p>Erase with mouse RIGHT button</p>
+    <div class="buttons">
+      <button class="button" id="action-button">Drawing</button>
+      <button class="button" id="pause-button">Play</button>
+      <button class="button" id="clear-button">Clear</button>
+    </div>
     <script src="sketch.js"></script>
   </body>
 </html>

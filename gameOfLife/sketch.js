@@ -4,14 +4,15 @@ let height = 400;                     // Canvas height
 let width = 400;                      // Canvas width
 let grid = new Grid(30, 30);          // Game
 let pause = true;                     // Pause state, if false, game stops
-let drawing = false;                  // Drawing state, if true, user can draw
-let erasing = false;                  // Erasing state, if true, user can erase
+let clicking = false;                 // Drawing/erasing state, if true, user can draw/erase when action
+let action = 1;                       // Action state, if true, action can be performed (draw or erase)
 let fr = 15;                          // Frame Rate
+let mobile = false;
 
 
 // ==================== MAIN FUNCTIONS ====================
 function setup() {
-  createCanvas(width, height);
+  let cnv = createCanvas(width, height);
   frameRate(fr);
 }
 
@@ -20,40 +21,58 @@ function draw() {
   if(!pause){
     grid.update();
   } else {
-   if(drawing){
+   if(action == 1 && clicking){
     grid.draw();
    }
-   if(erasing){
+   if(action == 0 && clicking){
     grid.erase();
    }
   }
   grid.show();
+
 }
 
 // ====================== AUXILIARY ======================
 
-// If space key is pressed, toggles pause state
-document.body.onkeyup = function(e){
-  if (e.key == " " || e.code == "Space" || e.keyCode == 32){
-    pause = !pause;
-    let pouseP = document.getElementById("pause");
-    pouseP.innerText = "Press SPACE key to";
-    if(pause){
-      pouseP.innerText += " unpause";
-    } else {
-      pouseP.innerText += " pause";
-    }
-  }
-}
-
-// If mouse is pressed, enables drawing or erasing, depending on the button
-document.body.onmousedown = function(e){
-  drawing = e.button == 0;
-  erasing = e.button == 2;
+// If mouse is pressed, enables drawing or erasing, depending on the action-button state
+document.body.onmousedown = function(){
+  clicking = true;
 }
 
 // If mouse is not pressed, disables drawing and erasing
-document.body.onmouseup = function(e){
-  drawing = false;
-  erasing = false;
+document.body.onmouseup = function(){
+  clicking = false;
 }
+
+// Action toggle
+let action_button = document.getElementById("action-button");
+action_button.onclick = function(){
+  action = !action;
+  action ? action_button.innerText = "Drawing" : action_button.innerText = "Erasing";
+}
+
+// Pause button
+let pause_button = document.getElementById("pause-button");
+pause_button.onclick = function(){
+  pause = !pause;
+  pause ? pause_button.innerText = "Play" : pause_button.innerText = "Pause";
+  action_button.disabled = !pause;
+}
+
+// Clear button
+let clear_button = document.getElementById("clear-button");
+clear_button.onclick = function(){
+  grid.clear();
+}
+
+// Mobile
+function touchStarted(){
+  mobile = true;
+  clicking = true;
+}
+
+function touchEnded(){
+  mobile = false;
+  clicking = false;
+}
+

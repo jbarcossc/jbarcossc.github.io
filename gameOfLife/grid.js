@@ -55,8 +55,15 @@ class Grid {
 
     // Draw: revive cells that the user presses with left click
     draw(){
-        let x = floor(mouseX / this.cellWidth);
-        let y = floor(mouseY / this.cellHeight);
+        let x;
+        let y;
+        if(mobile){
+            x = floor(touches[touches.length - 1].x / this.cellWidth);
+            y = floor(touches[touches.length - 1].y / this.cellHeight);
+        } else {
+            x = floor(mouseX / this.cellWidth);
+            y = floor(mouseY / this.cellHeight);
+        }
         if(0 <= x && x < this.rows && 0 <= y && y < this.cols){
             this.grid[y][x] = true;
         }
@@ -69,6 +76,17 @@ class Grid {
         if(0 <= x && x < this.rows && 0 <= y && y < this.cols){
             this.grid[y][x] = false;
         }
+    }
+
+    clear(){
+        let newGrid = new Array;
+        for(let i = 0; i < this.rows; i++){
+            newGrid.push(new Array);
+            for(let j = 0; j < this.cols; j++){
+            newGrid[newGrid.length - 1].push(false);
+            }
+        }
+        this.grid = newGrid;
     }
 
 
