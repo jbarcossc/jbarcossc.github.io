@@ -8,6 +8,10 @@ let clicking = false;                 // Drawing/erasing state, if true, user ca
 let action = 1;                       // Action state, if true, action can be performed (draw or erase)
 let fr = 15;                          // Frame Rate
 let mobile = false;
+let gridColor = "#2b2d42"
+let aliveColor = "#ed225d"
+let deadColor = "#ffffff"
+
 
 
 // ==================== MAIN FUNCTIONS ====================

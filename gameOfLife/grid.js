@@ -1,5 +1,5 @@
 class Grid {
-    // ========================= CONSTRUCTOR =========================
+    // ========================= VARS =========================
     constructor(rows, cols){
         this.rows = rows;
         this.cols = cols;
@@ -27,14 +27,13 @@ class Grid {
     // Show: displays the grid on the canvas
     show(){
         strokeWeight(1);
+        stroke(gridColor)
         for(let i = 0; i < this.rows; i++){
             for(let j = 0; j < this.cols; j++){
                 if(this.grid[i][j]){
-                    stroke(0);
-                    fill(255);
+                    fill(aliveColor);
                 } else {
-                    stroke(255);
-                    fill(0);
+                    fill(deadColor);
                 }
                 rect(j*this.cellHeight, i*this.cellWidth, this.cellWidth, this.cellHeight);
             }
