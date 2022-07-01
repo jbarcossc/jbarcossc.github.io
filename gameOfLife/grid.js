@@ -57,7 +57,7 @@ class Grid {
     draw(){
         let x;
         let y;
-        if(mobile){
+        if(mobile && touches.length >= 1){
             x = floor(touches[touches.length - 1].x / this.cellWidth);
             y = floor(touches[touches.length - 1].y / this.cellHeight);
         } else {
@@ -71,8 +71,15 @@ class Grid {
 
     // Erase: kills cells that the user presses with right click
     erase(){
-        let x = floor(mouseX / this.cellWidth);
-        let y = floor(mouseY / this.cellHeight);
+        let x;
+        let y;
+        if(mobile && touches.length >= 1){
+            x = floor(touches[touches.length - 1].x / this.cellWidth);
+            y = floor(touches[touches.length - 1].y / this.cellHeight);
+        } else {
+            x = floor(mouseX / this.cellWidth);
+            y = floor(mouseY / this.cellHeight);
+        }
         if(0 <= x && x < this.rows && 0 <= y && y < this.cols){
             this.grid[y][x] = false;
         }
