@@ -1,5 +1,5 @@
 html, body {
-  height: 80%;
+  touch-action: none;
 }
 
 body {

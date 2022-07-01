@@ -75,4 +75,3 @@ function touchEnded(){
   mobile = false;
   clicking = false;
 }
-
