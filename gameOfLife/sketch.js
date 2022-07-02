@@ -2,21 +2,24 @@
 
 let height = 400;                     // Canvas height
 let width = 400;                      // Canvas width
+let maxWidth = screen.width - 40;     // Max canvas width depending on device
+let maxHeight = screen.height - 40;   // Max canvas height depending on device
 let grid = new Grid(30, 30);          // Game
 let pause = true;                     // Pause state, if false, game stops
 let clicking = false;                 // Drawing/erasing state, if true, user can draw/erase when action
 let action = 1;                       // Action state, if true, action can be performed (draw or erase)
 let fr = 15;                          // Frame Rate
-let mobile = false;
-let gridColor = "#2b2d42"
-let aliveColor = "#ed225d"
-let deadColor = "#ffffff"
+let mobile = false;                   // Mobile interaction state
+let gridColor = "#2b2d42"             // Game colors: Cell division
+let aliveColor = "#ed225d"            // Game colors: Living cells
+let deadColor = "#ffffff"             // Game colors: Dead cells
 
 
 
 // ==================== MAIN FUNCTIONS ====================
 function setup() {
-  let cnv = createCanvas(width, height);
+  let cnv = createCanvas(min(width, maxWidth), min(height, maxHeight));
+  cnv.parent('sketch-holder')
   frameRate(fr);
 }
 
