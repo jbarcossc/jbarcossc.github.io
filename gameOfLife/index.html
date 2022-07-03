@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Game of Life</title>
+    <title>The Game of Life</title>
 
     <link rel="icon" href="src/icon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -18,7 +18,7 @@
 
   <body oncontextmenu="return false;">
 
-    <h1>Game of Life</h1>
+    <h1>The Game of Life</h1>
 
     <div class="buttons">
       <button class="button" id="action-button"><i class="fa fa-paint-brush fa-2x" id="action-icon"></i></button>
@@ -28,7 +28,38 @@
 
     <div id="sketch-holder"></div>
 
-    <p id="explanation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fugit soluta animi, rerum molestiae corrupti doloribus dicta! Excepturi, cum similique unde fugiat autem voluptate enim neque quia voluptatibus quidem. Quasi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus ad enim non nobis, magni accusantium itaque velit beatae eos, quo perspiciatis maxime deleniti? Fugiat, incidunt dolore ipsam aut animi et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde adipisci deleniti sunt natus quod tenetur aliquam culpa iusto laboriosam modi, explicabo quibusdam ipsam eligendi inventore illo! Suscipit vero similique nisi?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, neque veritatis, amet quo perspiciatis quis blanditiis delectus qui alias accusamus corrupti modi aut ullam voluptatibus? Ratione esse iusto doloribus porro!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ex soluta tempore libero adipisci exercitationem non unde praesentium iure vel ea delectus, quos hic accusamus aperiam enim ut neque, voluptatum facilis explicabo repudiandae voluptate laborum cupiditate! Ratione quos laboriosam sunt culpa quia amet! Unde quos quis labore excepturi necessitatibus distinctio accusamus placeat, consequatur expedita veritatis molestiae laboriosam veniam tempora incidunt nihil, sequi eos eveniet ab ex ut quisquam? Enim neque reprehenderit animi illo aliquid, distinctio harum voluptates nesciunt ipsam atque sed. Reprehenderit officiis modi numquam sequi veniam quod temporibus. Distinctio dolore porro ea hic corrupti ad nisi corporis quae iste ratione error voluptatibus eos dolores veniam, alias ab rem aliquam culpa ipsum doloremque. At adipisci iusto explicabo. Doloribus ipsam facere, totam quidem deserunt soluta. Asperiores atque unde modi reiciendis. Facere provident optio aspernatur exercitationem deserunt tenetur, architecto voluptatum tempora rerum modi rem vitae quisquam ipsum recusandae eaque aut, ab iure saepe ex. Iusto officia temporibus esse animi atque, quaerat cumque fugiat modi possimus nisi obcaecati laudantium sit repudiandae totam. Harum fuga tempora expedita impedit! Doloribus, facere. Fugit pariatur ipsum, quibusdam dolor quos placeat maxime? Minima impedit hic ipsa laudantium porro corrupti repudiandae error ipsam maiores inventore magnam animi at, est earum ullam nesciunt quas maxime? Ratione, ea sint nam ut aspernatur veritatis quas, dolorum error inventore eaque asperiores non neque sequi harum, perferendis dolorem in unde minima ducimus nesciunt. Unde, cupiditate deleniti adipisci at ducimus minima praesentium aut dignissimos? Placeat alias, dignissimos nesciunt earum nostrum doloribus ex, praesentium odio ipsam sequi voluptas cupiditate deleniti est deserunt enim dolores. Non, ipsam voluptatum quisquam optio voluptate beatae laborum, nesciunt praesentium sed incidunt accusamus nihil corporis dolores consequatur facere aspernatur eveniet quam maxime quia. Dicta, repudiandae voluptatibus totam incidunt vitae architecto aliquid exercitationem quisquam ad nulla quasi perferendis quae laborum, ducimus eos porro vel nisi veritatis, consectetur beatae. Beatae natus inventore, aliquid iste quae maxime cumque totam sequi obcaecati nostrum rerum, iure ipsum nisi ex nobis distinctio laboriosam enim sed molestiae ducimus, dolor omnis in culpa! Officiis neque nihil enim ipsa officia error provident quibusdam vero, iusto nam unde. Dolor, dignissimos adipisci! Sit neque quas autem rerum doloremque consectetur optio molestiae ratione, officiis non eos recusandae natus aut laudantium minima aperiam. Nostrum autem dicta sunt, quaerat aliquam culpa. Necessitatibus, esse nostrum, iste aliquam nihil magni natus in repellendus eum nisi minima fugiat vitae voluptatibus asperiores delectus ad? Repellat culpa pariatur ratione modi ut repudiandae delectus, exercitationem possimus quam libero odit cumque fugiat tempora labore voluptates ad sed quas nostrum porro quibusdam tempore eius laboriosam. Modi eaque, nisi aspernatur exercitationem ducimus neque soluta hic rerum? Natus, mollitia! Culpa maxime, quasi velit ab totam autem dolores labore saepe doloremque neque minima ipsum veritatis eius atque rerum consequatur repudiandae reprehenderit praesentium quisquam quam, accusamus laboriosam suscipit vero! Quisquam perspiciatis harum porro sit itaque repellat cumque at error nesciunt, ut obcaecati inventore similique pariatur saepe illum rerum corrupti doloribus quasi. Nesciunt, repellat ducimus. Tempora consequuntur dolore quibusdam necessitatibus beatae magnam praesentium omnis unde quis, ducimus nobis vitae.</p>
+    <h2 id="explanation-0">What is 'The Game of Life'?</h2>
+    <p id="explanation-1" class="explanation">
+      The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway" class="link" target="_blank">John Horton Conway</a> in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
+    </p>
+    <h2 id="rules-0">Rules</h2>
+    <p id="rules-1" class="explanation">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
+    <p id="rule-1" class="explanation">1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.</p>
+    <div class="rule">
+      <img src="src/rule_1_a.png" alt="Rule 1, phase A" class="rule-img">
+      <i class="fa fa-solid fa-arrow-right fa-3x"></i>
+      <img src="src/rule_1_b.png" alt="Rule 1, phase B" class="rule-img">
+    </div>
+    <p id="rule-2" class="explanation">2. Any live cell with two or three live neighbours lives on to the next generation.</p>
+    <div class="rule">
+      <img src="src/rule_2_ab.png" alt="Rule 2, phase A" class="rule-img">
+      <i class="fa fa-solid fa-arrow-right fa-3x"></i>
+      <img src="src/rule_2_ab.png" alt="Rule 2, phase B" class="rule-img">
+    </div>
+    <p id="rule-3" class="explanation">3. Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
+    <div class="rule">
+      <img src="src/rule_3_a.png" alt="Rule 3, phase A" class="rule-img">
+      <i class="fa fa-solid fa-arrow-right fa-3x"></i>
+      <img src="src/rule_3_b.png" alt="Rule 3, phase B" class="rule-img">
+    </div>
+    <p id="rule-4" class="explanation">4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
+    <div class="rule">
+      <img src="src/rule_4_a.png" alt="Rule 4, phase A" class="rule-img">
+      <i class="fa fa-solid fa-arrow-right fa-3x"></i>
+      <img src="src/rule_4_b.png" alt="Rule 4, phase B" class="rule-img">
+    </div>
+
+    <p id="more-info" class="explanation">More information <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="link" target="_blank">here</a>.</p>
 
     <script src="sketch.js"></script>
     
