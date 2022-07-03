@@ -3,7 +3,7 @@
 let height = 400;                     // Canvas height
 let width = 400;                      // Canvas width
 let maxWidth = screen.width - 40;     // Max canvas width depending on device
-let maxHeight = screen.height - 40;   // Max canvas height depending on device
+let maxHeight = screen.height - 200;   // Max canvas height depending on device
 let grid = new Grid(30, 30);          // Game
 let pause = true;                     // Pause state, if false, game stops
 let clicking = false;                 // Drawing/erasing state, if true, user can draw/erase when action
@@ -53,16 +53,18 @@ document.body.onmouseup = function(){
 
 // Action toggle
 let action_button = document.getElementById("action-button");
+let action_icon = document.getElementById("action-icon");
 action_button.onclick = function(){
   action = !action;
-  action ? action_button.innerText = "Drawing" : action_button.innerText = "Erasing";
+  action ? action_icon.className = "fa fa-paint-brush fa-2x" : action_icon.className = "fa fa-solid fa-eraser fa-2x";
 }
 
 // Pause button
 let pause_button = document.getElementById("pause-button");
+let pause_icon = document.getElementById("pause-icon");
 pause_button.onclick = function(){
   pause = !pause;
-  pause ? pause_button.innerText = "Play" : pause_button.innerText = "Pause";
+  pause ? pause_icon.className = "fa fa-solid fa-play fa-2x" : pause_icon.className = "fa fa-solid fa-pause fa-2x";
   action_button.disabled = !pause;
 }
 
