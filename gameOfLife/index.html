@@ -27,10 +27,43 @@
     </div>
     <button id="config"><i class="fa fa-solid fa-gear fa-2x"></i></button>
     <div class="config-list">
-        <div>Game size</div>
-        <input type="range" id="game-size">
-        <div>Cell scale</div>
-        <input type="range" id="cell-scale">
+      <div class="size">
+        <div>Height</div>
+        <div class="range" id="range-height">
+          <div class="slider-value">
+            <span id="height-value" class="slider-value">350</span>
+          </div>
+          <div class="field">
+            <div class="value left" id="min-height-size">0</div>
+            <input type="range" id="height-size" step="1">
+            <div class="value right" id="max-height-size">200</div>
+          </div>
+        </div>
+        <div>Width</div>
+        <div class="range" id="range-width">
+            <div class="slider-value">
+              <span id="width-value" class="slider-value">350</span>
+            </div>
+            <div class="field">
+              <div class="value left" id="min-width-size">0</div>
+              <input type="range" id="width-size" step="1">
+              <div class="value right" id="max-width-size">200</div>
+            </div>
+            <button class="range-button">Apply</button>
+        </div>
+      </div>
+        <div>Scale</div>
+        <div class="range" id="range-grid">
+          <div class="slider-value">
+            <span id="grid-size-value" class="slider-value">120</span>
+          </div>
+          <div class="field">
+            <div class="value left" id="min-grid-size">0</div>
+            <input type="range" id="grid-size" step="1">
+            <div class="value right" id="max-grid-size">200</div>
+          </div>
+          <button class="range-button">Apply</button>
+        </div>
         <div>Toroid mode</div>
         <label class="switch">
           <input type="checkbox">

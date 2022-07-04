@@ -6,6 +6,10 @@
   --font-color: #ced4da;
   --background-color: #212529;
   --error: #e63946;
+  --confirm: #f72585;
+  --dead-color: #ffffff;
+  --grid-color: #2b2d42;
+  --alive-color: #ed225d;
 }
 
 html, body {
@@ -150,6 +154,7 @@ canvas {
   border: none;
   color: var(--font-color);
   transition: 0.4s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .config-list {
@@ -159,6 +164,7 @@ canvas {
   background-color: var(--main-color);
   position: absolute;
   white-space: nowrap;
+  font-size: 20px;
   font-family: 'Roboto Mono', monospace;
   font-weight: 600;
   right: 29px;
@@ -168,8 +174,7 @@ canvas {
   padding: 20px;
   top: 90px;
   text-align: center;
-  line-height: 30px;
-  gap: 50px;
+  line-height: 70px;
   opacity: 0%;
   transition: 0.3s;
 }
@@ -203,4 +208,118 @@ canvas {
     background-color: var(--secondary-color);
     transition: 0.2s;
   }
+}
+
+/*Sliders*/
+
+.range {
+  height: 50px;
+  width: 0px;
+  margin: auto;
+  margin-bottom: 90px;
+  background: var(--background-color);
+  border-radius: 10px;
+  padding: 0 65px 0 45px;
+}
+
+.range .field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.range .field .value {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color);
+}
+
+.range .field .value.left {
+  left: -35px;
+}
+
+.range .field .value.right {
+  right: -43px;
+}
+
+.range .slider-value {
+  position: relative;
+  font-size: 14px;
+  top: -14px;
+  width: 100%;
+}
+
+.range .slider-value span {
+  position: absolute;
+  height: 45px;
+  color: var(--dead-color);
+  font-weight: 500;
+  transform: translate(-50%);
+  line-height: 55px;
+  z-index: 2;
+}
+
+
+.range .slider-value span:after {
+  position: absolute;
+  content: "";
+  height: 35px;
+  width: 35px;
+  left: 50%;
+  background: var(--alive-color);
+  transform: translate(-50%, 18%) rotate(45deg);
+  border: 3px solid var(--dead-color);
+  z-index: -1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.range .field input {
+  -webkit-appearance: none;
+  height: 3px;
+  width: 100%;
+  background: var(--dead-color);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.range .field input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: var(--alive-color);
+  border-radius: 50%;
+  border: 1px solid var(--grid-color);
+  cursor: pointer;
+}
+
+.range-button {
+  position: relative;
+  left: 35%;
+  border: none;
+  width: 180px;
+  margin-top: 10px;
+  height: 30px;
+  background-color: var(--alive-color);
+  color: var(--dead-color);
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  transition: 0.3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.range-button:active {
+  background-color: var(--secondary-color);
+}
+
+.range-button:hover {
+  background-color: var(--confirm);
+  transition: 0.3s;
 }

@@ -3,8 +3,8 @@ class Grid {
     constructor(rows, cols){
         this.rows = rows;
         this.cols = cols;
-        this.cellHeight = height / this.rows;
-        this.cellWidth = width / this.cols;
+        this.cellHeight = canvasHeight / this.rows;
+        this.cellWidth = canvasWidth / this.cols;
 
         // Sets default grid state
         this.grid = new Array;
@@ -63,7 +63,7 @@ class Grid {
             x = floor(mouseX / this.cellWidth);
             y = floor(mouseY / this.cellHeight);
         }
-        if(0 <= x && x < this.rows && 0 <= y && y < this.cols){
+        if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
             this.grid[y][x] = true;
         }
     }
@@ -79,7 +79,7 @@ class Grid {
             x = floor(mouseX / this.cellWidth);
             y = floor(mouseY / this.cellHeight);
         }
-        if(0 <= x && x < this.rows && 0 <= y && y < this.cols){
+        if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
             this.grid[y][x] = false;
         }
     }
