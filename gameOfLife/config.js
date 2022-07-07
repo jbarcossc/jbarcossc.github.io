@@ -29,6 +29,10 @@ function toggleConfig(){
 
 let config = document.getElementById("config");
 config.onclick = function(){
+    changeConfig();
+}
+
+function changeConfig(){
     configStatus = !configStatus;
     toggleConfig();
     configStatus? config.style.transform = "rotate(90deg)" : config.style.transform = "rotate(-90deg)";
@@ -44,7 +48,7 @@ let gridSizeSlider = document.querySelector("#grid-size");
 let gridSizeValue = document.querySelector("#grid-size-value");
 
 let gridMin = 5;
-let gridMax = Math.floor(Math.min(canvasHeight, canvasWidth) / 18);
+let gridMax = Math.round(Math.min(canvasHeight, canvasWidth) / 18);
 
 widthSlider.min = minWidth;
 document.getElementById("min-width-size").innerText = minWidth;
@@ -85,9 +89,39 @@ gridSizeSlider.oninput = function(){
     gridSizeValue.style.left = left + "%";
 }
 
+// Size input
+sizeSubmit = document.getElementById("size-button");
+sizeSubmit.onclick = function(){
+    width = Number(widthSlider.value);
+    height = Number(heightSlider.value);
+    setCanvasSize();
+    windowResized();
+    setRowsandCols();
+    grid = new Grid(rows, cols, gridSize, gridInfinite);
+}
+
+// Grid input
+gridSubmit = document.getElementById("scale-button");
+gridSubmit.onclick = function(){
+    gridSize = Number(gridSizeSlider.value);
+    setRowsandCols();
+    grid = new Grid(rows, cols, gridSize, gridInfinite);
+}
+
+
 // Infinite mode
 infinite = document.getElementById("infinite-checkbox");
 infinite.onclick = function(){
     gridInfinite = !gridInfinite;
-    grid = new Grid(rows, cols, gridInfinite);
+    grid = new Grid(rows, cols, gridSize, gridInfinite);
+}
+
+// Close config when clicking outside
+let configButton = document.getElementById("config-button");
+let menu = document.getElementById("menu");
+
+document.onclick = function(e){
+    if(!(menu.contains(e.target)) && !(configButton.contains(e.target)) && configStatus){
+        changeConfig();
+    }
 }

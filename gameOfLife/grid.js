@@ -1,11 +1,10 @@
 class Grid {
     // ========================= VARS =========================
-    constructor(rows, cols, gridInfinite){
-        this.infinite = gridInfinite;
-        this.rows = rows + this.infinite*10;
-        this.cols = cols + this.infinite*10;
-        this.cellHeight = canvasHeight / rows;
-        this.cellWidth = canvasWidth / cols;
+    constructor(gridRows, gridCols, scale, infinite){
+        this.infinite = infinite;
+        this.rows = gridRows + this.infinite*10;
+        this.cols = gridCols + this.infinite*10;
+        this.gridSize = scale;
 
         // Sets default grid state
         this.grid = new Array;
@@ -15,15 +14,6 @@ class Grid {
                 this.grid[this.grid.length - 1].push(false);
             }
         }
-
-        // These positions draw a 'glider'
-        let halfX = Math.floor(this.cols / 2);
-        let halfY = Math.floor(this.rows / 2);
-        this.grid[halfX][halfY] = true;
-        this.grid[halfX + 1][halfY + 1] = true;
-        this.grid[halfX][halfY + 2] = true;
-        this.grid[halfX - 1][halfY + 2] = true;
-        this.grid[halfX + 1][halfY + 2] = true;
     }
 
     // ======================== MAIN FUNCTIONS ========================
@@ -34,7 +24,7 @@ class Grid {
         for(let i = this.infinite*5; i < this.rows - this.infinite*5; i++){
             for(let j = this.infinite*5; j < this.cols - this.infinite*5; j++){
                 this.grid[i][j] ? fill(aliveColor) : fill(deadColor);
-                rect((j - this.infinite*5)*this.cellHeight, (i - this.infinite*5)*this.cellWidth, this.cellWidth, this.cellHeight);
+                rect((j - this.infinite*5)*this.gridSize, (i - this.infinite*5)*this.gridSize, this.gridSize, this.gridSize);
             }
         }
     }
@@ -56,11 +46,11 @@ class Grid {
         let x;
         let y;
         if(mobile && touches.length >= 1){
-            x = floor(touches[touches.length - 1].x / this.cellWidth);
-            y = floor(touches[touches.length - 1].y / this.cellHeight);
+            x = Math.floor(touches[touches.length - 1].x / this.gridSize);
+            y = Math.floor(touches[touches.length - 1].y / this.gridSize);
         } else {
-            x = floor(mouseX / this.cellWidth);
-            y = floor(mouseY / this.cellHeight);
+            x = Math.floor(mouseX / this.gridSize);
+            y = Math.floor(mouseY / this.gridSize);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
             this.grid[y + this.infinite*5][x + this.infinite*5] = true;
@@ -72,11 +62,11 @@ class Grid {
         let x;
         let y;
         if(mobile && touches.length >= 1){
-            x = floor(touches[touches.length - 1].x / this.cellWidth);
-            y = floor(touches[touches.length - 1].y / this.cellHeight);
+            x = Math.floor(touches[touches.length - 1].x / this.gridSize);
+            y = Math.floor(touches[touches.length - 1].y / this.gridSize);
         } else {
-            x = floor(mouseX / this.cellWidth);
-            y = floor(mouseY / this.cellHeight);
+            x = Math.floor(mouseX / this.gridSize);
+            y = Math.floor(mouseY / this.gridSize);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
             this.grid[y + this.infinite*5][x + this.infinite*5] = false;

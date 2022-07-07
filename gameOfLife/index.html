@@ -25,8 +25,10 @@
       <button class="button" id="pause-button"><i class="fa fa-solid fa-play fa-2x" id="pause-icon"></i></button>
       <button class="button" id="clear-button"><i class="fa fa-solid fa-trash fa-2x"></i></button>
     </div>
-    <button id="config"><i class="fa fa-solid fa-gear fa-2x"></i></button>
-    <div class="config-list">
+    <div id="config-button">
+      <button id="config"><i class="fa fa-solid fa-gear fa-2x"></i></button>
+    </div>
+    <div class="config-list" id="menu">
       <div class="size">
         <div>Height</div>
         <div class="range" id="range-height">
@@ -49,7 +51,7 @@
               <input type="range" id="width-size" step="1">
               <div class="value right" id="max-width-size">200</div>
             </div>
-            <button class="range-button">Apply</button>
+            <button class="range-button" id="size-button">Apply</button>
         </div>
       </div>
         <div>Scale</div>
@@ -62,7 +64,7 @@
             <input type="range" id="grid-size" step="1">
             <div class="value right" id="max-grid-size">200</div>
           </div>
-          <button class="range-button">Apply</button>
+          <button class="range-button" id="scale-button">Apply</button>
         </div>
         <div>Infinite mode</div>
         <label class="switch">
