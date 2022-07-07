@@ -1,10 +1,11 @@
 class Grid {
     // ========================= VARS =========================
-    constructor(rows, cols){
-        this.rows = rows;
-        this.cols = cols;
-        this.cellHeight = canvasHeight / this.rows;
-        this.cellWidth = canvasWidth / this.cols;
+    constructor(rows, cols, gridInfinite){
+        this.infinite = gridInfinite;
+        this.rows = rows + this.infinite*10;
+        this.cols = cols + this.infinite*10;
+        this.cellHeight = canvasHeight / rows;
+        this.cellWidth = canvasWidth / cols;
 
         // Sets default grid state
         this.grid = new Array;
@@ -16,11 +17,13 @@ class Grid {
         }
 
         // These positions draw a 'glider'
-        this.grid[9][9] = true;
-        this.grid[10][10] = true;
-        this.grid[9][11] = true;
-        this.grid[8][11] = true;
-        this.grid[10][11] = true;
+        let halfX = Math.floor(this.cols / 2);
+        let halfY = Math.floor(this.rows / 2);
+        this.grid[halfX][halfY] = true;
+        this.grid[halfX + 1][halfY + 1] = true;
+        this.grid[halfX][halfY + 2] = true;
+        this.grid[halfX - 1][halfY + 2] = true;
+        this.grid[halfX + 1][halfY + 2] = true;
     }
 
     // ======================== MAIN FUNCTIONS ========================
@@ -28,14 +31,10 @@ class Grid {
     show(){
         strokeWeight(1);
         stroke(gridColor)
-        for(let i = 0; i < this.rows; i++){
-            for(let j = 0; j < this.cols; j++){
-                if(this.grid[i][j]){
-                    fill(aliveColor);
-                } else {
-                    fill(deadColor);
-                }
-                rect(j*this.cellHeight, i*this.cellWidth, this.cellWidth, this.cellHeight);
+        for(let i = this.infinite*5; i < this.rows - this.infinite*5; i++){
+            for(let j = this.infinite*5; j < this.cols - this.infinite*5; j++){
+                this.grid[i][j] ? fill(aliveColor) : fill(deadColor);
+                rect((j - this.infinite*5)*this.cellHeight, (i - this.infinite*5)*this.cellWidth, this.cellWidth, this.cellHeight);
             }
         }
     }
@@ -64,7 +63,7 @@ class Grid {
             y = floor(mouseY / this.cellHeight);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
-            this.grid[y][x] = true;
+            this.grid[y + this.infinite*5][x + this.infinite*5] = true;
         }
     }
 
@@ -80,7 +79,7 @@ class Grid {
             y = floor(mouseY / this.cellHeight);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
-            this.grid[y][x] = false;
+            this.grid[y + this.infinite*5][x + this.infinite*5] = false;
         }
     }
 
@@ -102,9 +101,13 @@ class Grid {
         let neighbours = 0;
         for(let i = x - 1; i < x + 2; i++){
             for(let j = y - 1; j < y + 2; j++){
-                let posX = (i % this.rows) < 0 ? (i % this.rows) + this.rows : i % this.rows;
-                let posY = (j % this.cols) < 0 ? (j % this.cols) + this.cols : j % this.cols;
-                if (i != x || j != y){
+                let posX = i;
+                let posY = j;
+                if(!this.infinite){
+                    posX = (i % this.rows) < 0 ? (i % this.rows) + this.rows : i % this.rows;
+                    posY = (j % this.cols) < 0 ? (j % this.cols) + this.cols : j % this.cols;
+                }
+                if ((posX != x || posY != y) && posX >= 0 && posY >= 0 && posX < this.rows && posY < this.cols){
                     neighbours += this.grid[posX][posY];
                 }
             }

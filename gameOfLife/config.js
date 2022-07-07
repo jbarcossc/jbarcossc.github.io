@@ -84,3 +84,10 @@ gridSizeSlider.oninput = function(){
     let left = Number(((value - gridMin)*100) / (gridMax - gridMin));
     gridSizeValue.style.left = left + "%";
 }
+
+// Infinite mode
+infinite = document.getElementById("infinite-checkbox");
+infinite.onclick = function(){
+    gridInfinite = !gridInfinite;
+    grid = new Grid(rows, cols, gridInfinite);
+}
