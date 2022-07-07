@@ -9,7 +9,11 @@ let maxWidth = screen.width - 40;                                     // Max can
 let maxHeight = screen.height - 200;                                  // Max canvas height depending on device
 let canvasWidth, canvasHeight;
 setCanvasSize();                                                      // Set dimensions of canvas
+let gridMin = 5;
 let gridSize = 15;                                                    // Grid cell scale
+updateHeightSlider(canvasHeight, minHeight, maxHeight);
+updateWidthSlider(canvasWidth, minWidth, maxWidth);
+updateGridSlider(gridSize, canvasWidth, canvasHeight, gridMin);
 let rows, cols;
 setRowsandCols();                                                     // Set grid amount of rows and columns
 let gridInfinite = false;                                              // Infinite mode state
@@ -108,4 +112,5 @@ function setCanvasSize(){
 
 function windowResized(){
   resizeCanvas(canvasWidth, canvasHeight);
+  updateGridSlider(gridSize, canvasHeight, canvasWidth, gridMin);
 }

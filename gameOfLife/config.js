@@ -40,56 +40,59 @@ function changeConfig(){
 
 // ======================================== Options ========================================
 
+// Width Slider -------------------------------------------------------------
 let widthSlider = document.querySelector("#width-size");
-let heightSlider = document.querySelector("#height-size");
 let widthValue = document.querySelector("#width-value");
-let heightValue = document.querySelector("#height-value");
-let gridSizeSlider = document.querySelector("#grid-size");
-let gridSizeValue = document.querySelector("#grid-size-value");
+function updateWidthSlider(val, minWidth, maxWidth){
+    // Set slider limits -----------------
+    // Min
+    widthSlider.min = minWidth;
+    document.getElementById("min-width-size").innerText = minWidth;
+    // Max
+    widthSlider.max = maxWidth;
+    document.getElementById("max-width-size").innerText = maxWidth;
 
-let gridMin = 5;
-let gridMax = Math.round(Math.min(canvasHeight, canvasWidth) / 18);
-
-widthSlider.min = minWidth;
-document.getElementById("min-width-size").innerText = minWidth;
-
-widthSlider.max = maxWidth;
-document.getElementById("max-width-size").innerText = maxWidth;
-
-heightSlider.min = minHeight;
-document.getElementById("min-height-size").innerText = minHeight;
-
-heightSlider.max = maxHeight;
-document.getElementById("max-height-size").innerText = maxHeight;
-
-gridSizeSlider.min = gridMin;
-document.getElementById("min-grid-size").innerText = gridSizeSlider.min;
-
-gridSizeSlider.max = gridMax;
-document.getElementById("max-grid-size").innerText = gridSizeSlider.max;
-
-widthSlider.oninput = function(){
-    let value = widthSlider.value;
+    // Set value --------------------------
+    let value;
+    val ? value = val : value = Number(widthSlider.value);
+    widthSlider.value = value;
     widthValue.textContent = value;
+
+    // Style ------------------------------
     let left = Number(((value - minWidth)*100) / (maxWidth - minWidth));
     widthValue.style.left = left + "%";
 }
-
-heightSlider.oninput = function(){
-    let value = heightSlider.value;
-    heightValue.textContent = value;
-    let left = Number(((value - minHeight)*100) / (maxHeight - minHeight));
-    heightValue.style.left = left + "%";
+widthSlider.oninput = function(){
+    updateWidthSlider(false, Number(widthSlider.min), Number(widthSlider.max));
 }
 
-gridSizeSlider.oninput = function(){
-    let value = gridSizeSlider.value;
-    gridSizeValue.textContent = value;
-    let left = Number(((value - gridMin)*100) / (gridMax - gridMin));
-    gridSizeValue.style.left = left + "%";
+// Height Slider --------------------------------------------------------------
+let heightSlider = document.querySelector("#height-size");
+let heightValue = document.querySelector("#height-value");
+function updateHeightSlider(val, minHeight, maxHeight){
+    // Set slider limits ------------------
+    // Min
+    heightSlider.min = minHeight;
+    document.getElementById("min-height-size").innerText = minHeight;
+    // Max
+    heightSlider.max = maxHeight;
+    document.getElementById("max-height-size").innerText = maxHeight;
+
+     // Set value --------------------------
+     let value;
+     val ? value = val : value = Number(heightSlider.value);
+     heightSlider.value = value;
+     heightValue.textContent = value;
+ 
+     // Style ------------------------------
+     let left = Number(((value - minHeight)*100) / (maxHeight - minHeight));
+     heightValue.style.left = left + "%";
+}
+ heightSlider.oninput = function(){
+     updateHeightSlider(false, Number(heightSlider.min), Number(heightSlider.max));
 }
 
-// Size input
+// Size input ------------------------------------------------------------------
 sizeSubmit = document.getElementById("size-button");
 sizeSubmit.onclick = function(){
     width = Number(widthSlider.value);
@@ -100,28 +103,67 @@ sizeSubmit.onclick = function(){
     grid = new Grid(rows, cols, gridSize, gridInfinite);
 }
 
-// Grid input
+// Grid slider -----------------------------------------------------------------
+let gridSizeSlider = document.querySelector("#grid-size");
+let gridSizeValue = document.querySelector("#grid-size-value"); 
+
+function updateGridSlider(val, canvasHeight, canvasWidth, gridMin){
+    // Set slider limits -----------------
+    // Min
+    gridSizeSlider.min = gridMin;
+    document.getElementById("min-grid-size").innerText = gridSizeSlider.min;
+    // Max
+    let gridMax = Math.round(Math.min(canvasHeight, canvasWidth) / 18);
+    gridSizeSlider.max = gridMax;
+    document.getElementById("max-grid-size").innerText = gridSizeSlider.max;
+
+    // Set value -------------------------
+    let value;
+    val ? value = val : value = Number(gridSizeSlider.value);
+    if (value > gridMax){
+        value = Math.min(value, gridMax);
+        gridSize = value;
+        gridUpdate();
+    }
+    gridSizeSlider.value = value;
+    gridSizeValue.textContent = value;
+
+    // Style -----------------------------
+    let left = Number(((value - gridMin)*100) / (gridMax - gridMin));
+    gridSizeValue.style.left = left + "%";
+}
+gridSizeSlider.oninput = function(){
+    updateGridSlider(false, canvasHeight, canvasWidth, gridMin);
+}
+
+
+
+// Grid input -------------------------------------------------------------------
 gridSubmit = document.getElementById("scale-button");
 gridSubmit.onclick = function(){
+    gridUpdate();
+}
+function gridUpdate(){
     gridSize = Number(gridSizeSlider.value);
     setRowsandCols();
     grid = new Grid(rows, cols, gridSize, gridInfinite);
 }
 
 
-// Infinite mode
+// Infinite mode ----------------------------------------------------------------
 infinite = document.getElementById("infinite-checkbox");
 infinite.onclick = function(){
     gridInfinite = !gridInfinite;
     grid = new Grid(rows, cols, gridSize, gridInfinite);
 }
 
-// Close config when clicking outside
+// Close config when clicking outside -------------------------------------------
+/*
 let configButton = document.getElementById("config-button");
 let menu = document.getElementById("menu");
 
 document.onclick = function(e){
-    if(!(menu.contains(e.target)) && !(configButton.contains(e.target)) && configStatus){
+    if(configStatus && !(menu.contains(e.target)) && !(configButton.contains(e.target))){
         changeConfig();
     }
-}
+}*/

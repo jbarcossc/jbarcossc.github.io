@@ -25,6 +25,11 @@ body {
   color: var(--font-color)
 }
 
+*::selection {
+  color: var(--grid-color);
+  background: var(--alive-color);
+}
+
 canvas {
   touch-action: none;
   display: block;
@@ -177,6 +182,7 @@ canvas {
   line-height: 70px;
   opacity: 0%;
   transition: 0.3s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media only screen and (max-width: 600px){
@@ -322,4 +328,14 @@ canvas {
 .range-button:hover {
   background-color: var(--confirm);
   transition: 0.3s;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
