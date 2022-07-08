@@ -23,7 +23,6 @@ let pause = true;                                                     // Pause s
 let clicking = false;                                                 // Drawing/erasing state, if true, user can draw/erase when action
 let action = 1;                                                       // Action state, if true, action can be performed (draw or erase)
 let fr = 15;                                                               // Frame Rate
-
 let mobile = false;                                                   // Mobile interaction state
 let gridColor = "#2b2d42";                                             // Game colors: Cell division
 let aliveColor = "#ed225d";                                            // Game colors: Living cells
@@ -124,4 +123,8 @@ document.onclick = function(e){
     if(configStatus && !(document.getElementById("menu").contains(e.target)) &&  !(document.getElementById("config-button").contains(e.target))){
       changeConfig();
     }
+}
+
+function setFrameRate(val){
+  frameRate(val);
 }
