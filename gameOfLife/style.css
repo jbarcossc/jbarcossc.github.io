@@ -497,7 +497,7 @@ input:checked + .slider:before {
   margin: 5%;
   cursor: pointer;
   width: 40%;
-  border-radius: 40px;
+  border-radius: 10px;
   transition: 0.4s;
 }
 
