@@ -163,7 +163,7 @@ canvas {
 }
 
 .config-list {
-  border-radius: 15px;
+  border-radius: 15px 0px 0px 15px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -199,6 +199,7 @@ canvas {
   }
 
   .config-list {
+    border-radius: 15px;
     top: 145px;
     width: 500px;
   }
