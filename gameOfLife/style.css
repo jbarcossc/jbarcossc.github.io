@@ -470,6 +470,7 @@ input:checked + .slider:before {
   left: 25px;
   height: 30px;
   width: auto;
+  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -494,6 +495,7 @@ input:checked + .slider:before {
 
 .child {
   margin: 5%;
+  cursor: pointer;
   width: 40%;
   border-radius: 40px;
   transition: 0.4s;
