@@ -52,9 +52,13 @@ languageButton.onclick = function(){
     if(lang == "english"){
         flag.className = "spanish";
         flag.src = "src/es.png";
+        document.getElementById("conway").href = "https://es.wikipedia.org/wiki/John_Horton_Conway";
+        document.getElementById("more-info-1.5").href = "https://es.wikipedia.org/wiki/Juego_de_la_vida";
     } else {
         flag.className = "english";
         flag.src = "src/gb.png";
+        document.getElementById("conway").href = "https://en.wikipedia.org/wiki/John_Horton_Conway";
+        document.getElementById("more-info-1.5").href = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life";
     }
     lang = flag.className
     for(el in languages[lang]){
