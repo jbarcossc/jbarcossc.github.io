@@ -415,11 +415,12 @@ canvas {
 .slider {
   position: absolute;
   cursor: pointer;
+  border: 2px solid var(--background-color);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--grid-color);
+  background-color: var(--dead-color);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -427,11 +428,10 @@ canvas {
 .slider:before {
   position: absolute;
   content: "";
-  height: 13px;
-  width: 13px;
+  height: 15px;
+  width: 15px;
   left: 4px;
-  bottom: 4px;
-  background-color: var(--dead-color);
+  background-color: var(--background-color);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -441,9 +441,9 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(39px);
-  -ms-transform: translateX(39px);
-  transform: translateX(39px);
+  -webkit-transform: translateX(35px);
+  -ms-transform: translateX(35px);
+  transform: translateX(35px);
 }
 
 /* Rounded sliders */
@@ -483,4 +483,32 @@ input:checked + .slider:before {
     top: 90px;
     left: calc(50vw - 180px);
   }
+}
+
+#palettes-imgs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.child {
+  margin: 5%;
+  width: 40%;
+  border-radius: 40px;
+  transition: 0.4s;
+}
+
+@media(hover: hover){
+  .child:hover {
+    width: 45%;
+    margin: 2.5%;
+    transition: 0.2s;
+  }
+}
+
+.child:active {
+  width: 45%;
+  margin: 2.5%;
+  transition: 0.4s;
 }

@@ -87,6 +87,16 @@
         <button class="pattern" id="loafer">Loafer</button>
       </div>
       <div class="config-option" id="palettes">Color palettes</div>
+      <div id="palettes-imgs">
+        <img src="src/palettes/palette_classic.png" id="classic" class="palette child">
+        <img src="src/palettes/palette_dark.png" id="dark" class="palette child">
+        <img src="src/palettes/palette_violet.png" id="violet" class="palette child">
+        <img src="src/palettes/palette_lucia.png" id="lucia" class="palette child">
+        <img src="src/palettes/palette_anya.png" id="anya" class="palette child">
+        <img src="src/palettes/palette_green.png" id="green" class="palette child">
+        <img src="src/palettes/palette_earth.png" id="earth" class="palette child">
+        <img src="src/palettes/palette_baby.png" id="baby" class="palette child">
+      </div>
     </div>
 
     <div id="sketch-holder"></div>
@@ -106,27 +116,27 @@
     <p id="rules-1" class="explanation">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
     <p id="rule-1" class="explanation">1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.</p>
     <div class="rule">
-      <img src="src/rule_1_a.png" alt="Rule 1, phase A" class="rule-img">
+      <img src="src/rules/classic/rule_1_a.png" alt="Rule 1, phase A" class="rule-img" id="rule1a">
       <i class="fa fa-solid fa-arrow-right fa-3x"></i>
-      <img src="src/rule_1_b.png" alt="Rule 1, phase B" class="rule-img">
+      <img src="src/rules/classic/rule_1_b.png" alt="Rule 1, phase B" class="rule-img" id="rule1b">
     </div>
     <p id="rule-2" class="explanation">2. Any live cell with two or three live neighbours lives on to the next generation.</p>
     <div class="rule">
-      <img src="src/rule_2_ab.png" alt="Rule 2, phase A" class="rule-img">
+      <img src="src/rules/classic/rule_2_ab.png" alt="Rule 2, phase A" class="rule-img" id="rule2a">
       <i class="fa fa-solid fa-arrow-right fa-3x"></i>
-      <img src="src/rule_2_ab.png" alt="Rule 2, phase B" class="rule-img">
+      <img src="src/rules/classic/rule_2_ab.png" alt="Rule 2, phase B" class="rule-img" id="rule2b">
     </div>
     <p id="rule-3" class="explanation">3. Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
     <div class="rule">
-      <img src="src/rule_3_a.png" alt="Rule 3, phase A" class="rule-img">
+      <img src="src/rules/classic/rule_3_a.png" alt="Rule 3, phase A" class="rule-img" id="rule3a">
       <i class="fa fa-solid fa-arrow-right fa-3x"></i>
-      <img src="src/rule_3_b.png" alt="Rule 3, phase B" class="rule-img">
+      <img src="src/rules/classic/rule_3_b.png" alt="Rule 3, phase B" class="rule-img" id="rule3b">
     </div>
     <p id="rule-4" class="explanation">4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
     <div class="rule">
-      <img src="src/rule_4_a.png" alt="Rule 4, phase A" class="rule-img">
+      <img src="src/rules/classic/rule_4_a.png" alt="Rule 4, phase A" class="rule-img" id="rule4a">
       <i class="fa fa-solid fa-arrow-right fa-3x"></i>
-      <img src="src/rule_4_b.png" alt="Rule 4, phase B" class="rule-img">
+      <img src="src/rules/classic/rule_4_b.png" alt="Rule 4, phase B" class="rule-img" id="rule4b">
     </div>
 
     <p id="more-info" class="explanation"><span id="more-info-1.0">More information </span><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="link" target="_blank" id="more-info-1.5">here</a>.</p>
@@ -135,5 +145,6 @@
     <script src="patterns.js"></script>
     <script src="sketch.js"></script>
     <script src="language.js"></script>
+    <script src="palettes.js"></script>
    </body>
 </html>
