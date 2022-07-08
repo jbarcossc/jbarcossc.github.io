@@ -453,3 +453,9 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+#range-speed {
+  left: auto;
+  width: 300px;
+  margin: 0;
+}

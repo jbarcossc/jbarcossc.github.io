@@ -128,3 +128,10 @@ document.onclick = function(e){
 function setFrameRate(val){
   frameRate(val);
 }
+
+// Speed configuration
+let speedSlider = document.getElementById("speed");
+speedSlider.oninput = function(){
+  let val = Number(speedSlider.value);
+  setFrameRate(val);
+}

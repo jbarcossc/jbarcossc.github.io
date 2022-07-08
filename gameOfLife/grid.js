@@ -2,8 +2,8 @@ class Grid {
     // ========================= VARS =========================
     constructor(gridRows, gridCols, scale, infinite, pattern){
         this.infinite = infinite;
-        this.rows = gridRows + this.infinite*10;
-        this.cols = gridCols + this.infinite*10;
+        this.rows = gridRows + this.infinite*30;
+        this.cols = gridCols + this.infinite*30;
         this.gridSize = scale;
 
         // Sets default grid state
@@ -15,10 +15,10 @@ class Grid {
     show(){
         strokeWeight(1);
         stroke(gridColor)
-        for(let i = this.infinite*5; i < this.rows - this.infinite*5; i++){
-            for(let j = this.infinite*5; j < this.cols - this.infinite*5; j++){
+        for(let i = this.infinite*15; i < this.rows - this.infinite*15; i++){
+            for(let j = this.infinite*15; j < this.cols - this.infinite*15; j++){
                 this.grid[i][j] ? fill(aliveColor) : fill(deadColor);
-                rect((j - this.infinite*5)*this.gridSize, (i - this.infinite*5)*this.gridSize, this.gridSize, this.gridSize);
+                rect((j - this.infinite*15)*this.gridSize, (i - this.infinite*15)*this.gridSize, this.gridSize, this.gridSize);
             }
         }
     }
@@ -47,7 +47,7 @@ class Grid {
             y = Math.floor(mouseY / this.gridSize);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
-            this.grid[y + this.infinite*5][x + this.infinite*5] = 1;
+            this.grid[y + this.infinite*15][x + this.infinite*15] = 1;
         }
     }
 
@@ -63,7 +63,7 @@ class Grid {
             y = Math.floor(mouseY / this.gridSize);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
-            this.grid[y + this.infinite*5][x + this.infinite*5] = 0;
+            this.grid[y + this.infinite*15][x + this.infinite*15] = 0;
         }
     }
 
