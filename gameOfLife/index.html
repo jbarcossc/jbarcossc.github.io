@@ -19,8 +19,10 @@
 
   <body oncontextmenu="return false;">
 
-    <h1>The Game of Life</h1>
-
+    <h1 id="title">The Game of Life</h1>
+    <div class="lang-wrap" id="lang">
+      <img src="src/gb.png" class="english">
+    </div>
     <div class="buttons noselect">
       <button class="button" id="action-button"><i class="fa fa-paint-brush fa-2x" id="action-icon"></i></button>
       <button class="button" id="pause-button"><i class="fa fa-solid fa-play fa-2x" id="pause-icon"></i></button>
@@ -31,7 +33,7 @@
     </div>
     <div class="config-list noselect" id="menu">
       <div class="size">
-        <div class="config-option">Height</div>
+        <div class="config-option" id="height">Height</div>
         <div class="range" id="range-height">
           <div class="slider-value">
             <span id="height-value" class="slider-value">350</span>
@@ -42,7 +44,7 @@
             <div class="value right" id="max-height-size">200</div>
           </div>
         </div>
-        <div class="config-option">Width</div>
+        <div class="config-option" id="width">Width</div>
         <div class="range" id="range-width">
             <div class="slider-value">
               <span id="width-value" class="slider-value">350</span>
@@ -55,7 +57,7 @@
             <button class="range-button" id="size-button">Apply</button>
         </div>
       </div>
-      <div class="config-option">Scale</div>
+      <div class="config-option" id="scale">Scale</div>
       <div class="range" id="range-grid">
         <div class="slider-value">
           <span id="grid-size-value" class="slider-value">120</span>
@@ -67,12 +69,12 @@
         </div>
         <button class="range-button" id="scale-button">Apply</button>
       </div>
-      <div class="config-option">Infinite mode</div>
+      <div class="config-option" id="infinite">Infinite mode</div>
       <label class="switch">
         <input type="checkbox" id="infinite-checkbox" >
         <span class="slider round"></span>
       </label>
-      <div class="config-option">Patterns</div>
+      <div class="config-option" id="patterns">Patterns</div>
       <div id="patterns">
         <button class="pattern" id="glider">Glider</button>
         <button class="pattern" id="pulsar">Pulsar</button>
@@ -84,7 +86,7 @@
         <button class="pattern" id="copperhead">Copperhead</button>
         <button class="pattern" id="loafer">Loafer</button>
       </div>
-      <div class="config-option">Color palettes</div>
+      <div class="config-option" id="palettes">Color palettes</div>
     </div>
 
     <div id="sketch-holder"></div>
@@ -97,7 +99,8 @@
 
     <h2 id="explanation-0">What is 'The Game of Life'?</h2>
     <p id="explanation-1" class="explanation">
-      The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway" class="link" target="_blank">John Horton Conway</a> in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
+      <span id="explanation-1.0">
+      The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician </span><a href="https://en.wikipedia.org/wiki/John_Horton_Conway" class="link" id="conway" target="_blank">John Horton Conway</a> <span id="explanation-1.5"> in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.</span>
     </p>
     <h2 id="rules-0">Rules</h2>
     <p id="rules-1" class="explanation">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
@@ -126,10 +129,11 @@
       <img src="src/rule_4_b.png" alt="Rule 4, phase B" class="rule-img">
     </div>
 
-    <p id="more-info" class="explanation">More information <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="link" target="_blank">here</a>.</p>
+    <p id="more-info" class="explanation"><span id="more-info-1.0">More information </span><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="link" target="_blank" id="more-info-1.5">here</a>.</p>
 
     <script src="config.js"></script>
     <script src="patterns.js"></script>
     <script src="sketch.js"></script>
+    <script src="language.js"></script>
    </body>
 </html>

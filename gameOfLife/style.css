@@ -461,3 +461,26 @@ input:checked + .slider:before {
   width: 300px;
   margin: 0;
 }
+
+#lang {
+  border: 3px solid var(--main-color);
+  border-radius: 2px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 30px;
+  width: auto;
+  transition: 0.2s;
+}
+
+#lang img{
+  height: 100%;
+  width: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  #lang {
+    top: 90px;
+    left: calc(50vw - 180px);
+  }
+}
