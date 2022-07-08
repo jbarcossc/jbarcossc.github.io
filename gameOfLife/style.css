@@ -164,6 +164,7 @@ canvas {
 
 .config-list {
   border-radius: 15px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   background-color: var(--main-color);
@@ -173,16 +174,21 @@ canvas {
   font-family: 'Roboto Mono', monospace;
   font-weight: 600;
   right: 29px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   visibility: hidden;
   width: 0px;
   padding: 20px;
   top: 90px;
   text-align: center;
-  line-height: 70px;
   opacity: 0%;
   transition: 0.3s;
   -webkit-tap-highlight-color: transparent;
+}
+
+.config-option {
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 600px){
@@ -222,10 +228,14 @@ canvas {
   height: 50px;
   width: 0px;
   margin: auto;
-  margin-bottom: 90px;
+  margin-bottom: 70px;
   background: var(--background-color);
   border-radius: 10px;
   padding: 0 65px 0 45px;
+}
+
+#range-height {
+  margin-bottom: 20px;
 }
 
 .range .field {
@@ -313,7 +323,7 @@ canvas {
   height: 30px;
   background-color: var(--alive-color);
   color: var(--dead-color);
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
   font-family: 'Roboto Mono', monospace;
@@ -321,11 +331,11 @@ canvas {
   -webkit-tap-highlight-color: transparent;
 }
 
-.range-button:active {
+.range-button:active, .pattern:active {
   background-color: var(--secondary-color);
 }
 
-.range-button:hover {
+.range-button:hover, .pattern:hover {
   background-color: var(--confirm);
   transition: 0.3s;
 }
@@ -338,4 +348,45 @@ canvas {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+#patterns {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pattern {
+  height: 40px;
+  font-size: 17px;
+  font-family: 'Roboto Mono', monospace;;
+  font-weight: 600;
+  border: none;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  background-color: var(--alive-color);
+  color: var(--dead-color);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--dead-color);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--alive-color);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--confirm);
 }

@@ -100,7 +100,7 @@ sizeSubmit.onclick = function(){
     setCanvasSize();
     windowResized();
     setRowsandCols();
-    grid = new Grid(rows, cols, gridSize, gridInfinite);
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
 }
 
 // Grid slider -----------------------------------------------------------------
@@ -146,7 +146,7 @@ gridSubmit.onclick = function(){
 function gridUpdate(){
     gridSize = Number(gridSizeSlider.value);
     setRowsandCols();
-    grid = new Grid(rows, cols, gridSize, gridInfinite);
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
 }
 
 
@@ -154,16 +154,53 @@ function gridUpdate(){
 infinite = document.getElementById("infinite-checkbox");
 infinite.onclick = function(){
     gridInfinite = !gridInfinite;
-    grid = new Grid(rows, cols, gridSize, gridInfinite);
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
 }
 
-// Close config when clicking outside -------------------------------------------
-/*
-let configButton = document.getElementById("config-button");
-let menu = document.getElementById("menu");
 
-document.onclick = function(e){
-    if(configStatus && !(menu.contains(e.target)) && !(configButton.contains(e.target))){
-        changeConfig();
-    }
-}*/
+// Patterns ---------------------------------------------------------------------
+glider = document.getElementById("glider");
+glider.onclick = function(){
+    pattern = glider;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+pulsar = document.getElementById("pulsar");
+pulsar.onclick = function(){
+    pattern = pulsar;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+penta = document.getElementById("penta");
+penta.onclick = function(){
+    pattern = penta;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+galaxy = document.getElementById("galaxy");
+galaxy.onclick = function(){
+    pattern = galaxy;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+star = document.getElementById("star");
+star.onclick = function(){
+    pattern = star;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+spaceship = document.getElementById("spaceship");
+spaceship.onclick = function(){
+    pattern = spaceship;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+weekender = document.getElementById("weekender");
+weekender.onclick = function(){
+    pattern = weekender;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+copperhead = document.getElementById("copperhead");
+copperhead.onclick = function(){
+    pattern = copperhead;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}
+loafer = document.getElementById("loafer");
+loafer.onclick = function(){
+    pattern = loafer;
+    grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);
+}

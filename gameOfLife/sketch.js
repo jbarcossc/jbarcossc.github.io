@@ -17,11 +17,13 @@ updateGridSlider(gridSize, canvasWidth, canvasHeight, gridMin);
 let rows, cols;
 setRowsandCols();                                                     // Set grid amount of rows and columns
 let gridInfinite = false;                                              // Infinite mode state
-let grid = new Grid(rows, cols, gridSize, gridInfinite);              // Game
+let pattern = glider;
+let grid = new Grid(rows, cols, gridSize, gridInfinite, pattern);              // Game
 let pause = true;                                                     // Pause state, if false, game stops
 let clicking = false;                                                 // Drawing/erasing state, if true, user can draw/erase when action
 let action = 1;                                                       // Action state, if true, action can be performed (draw or erase)
-let fr = 15;                                                          // Frame Rate
+let fr = 15;                                                               // Frame Rate
+
 let mobile = false;                                                   // Mobile interaction state
 let gridColor = "#2b2d42";                                             // Game colors: Cell division
 let aliveColor = "#ed225d";                                            // Game colors: Living cells
@@ -113,4 +115,13 @@ function setCanvasSize(){
 function windowResized(){
   resizeCanvas(canvasWidth, canvasHeight);
   updateGridSlider(gridSize, canvasHeight, canvasWidth, gridMin);
+}
+
+
+// Close config when clicking outside -------------------------------------------
+
+document.onclick = function(e){
+    if(configStatus && !(document.getElementById("menu").contains(e.target)) &&  !(document.getElementById("config-button").contains(e.target))){
+      changeConfig();
+    }
 }

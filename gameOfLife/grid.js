@@ -1,19 +1,13 @@
 class Grid {
     // ========================= VARS =========================
-    constructor(gridRows, gridCols, scale, infinite){
+    constructor(gridRows, gridCols, scale, infinite, pattern){
         this.infinite = infinite;
         this.rows = gridRows + this.infinite*10;
         this.cols = gridCols + this.infinite*10;
         this.gridSize = scale;
 
         // Sets default grid state
-        this.grid = new Array;
-        for(let i = 0; i < this.rows; i++){
-            this.grid.push(new Array);
-            for(let j = 0; j < this.cols; j++){
-                this.grid[this.grid.length - 1].push(false);
-            }
-        }
+        this.setNewPattern(pattern);
     }
 
     // ======================== MAIN FUNCTIONS ========================
@@ -53,7 +47,7 @@ class Grid {
             y = Math.floor(mouseY / this.gridSize);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
-            this.grid[y + this.infinite*5][x + this.infinite*5] = true;
+            this.grid[y + this.infinite*5][x + this.infinite*5] = 1;
         }
     }
 
@@ -69,7 +63,7 @@ class Grid {
             y = Math.floor(mouseY / this.gridSize);
         }
         if(0 <= x && x < this.cols && 0 <= y && y < this.rows){
-            this.grid[y + this.infinite*5][x + this.infinite*5] = false;
+            this.grid[y + this.infinite*5][x + this.infinite*5] = 0;
         }
     }
 
@@ -78,10 +72,14 @@ class Grid {
         for(let i = 0; i < this.rows; i++){
             newGrid.push(new Array);
             for(let j = 0; j < this.cols; j++){
-            newGrid[newGrid.length - 1].push(false);
+            newGrid[newGrid.length - 1].push(0);
             }
         }
         this.grid = newGrid;
+    }
+
+    setNewPattern(pattern){
+        this.grid = setPattern(this.rows, this.cols, pattern);
     }
 
 

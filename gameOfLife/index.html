@@ -25,53 +25,64 @@
       <button class="button" id="pause-button"><i class="fa fa-solid fa-play fa-2x" id="pause-icon"></i></button>
       <button class="button" id="clear-button"><i class="fa fa-solid fa-trash fa-2x"></i></button>
     </div>
-    <div id="config-button noselect">
+    <div id="config-button" class="noselect">
       <button id="config"><i class="fa fa-solid fa-gear fa-2x"></i></button>
     </div>
     <div class="config-list noselect" id="menu">
       <div class="size">
-        <div>Height</div>
+        <div class="config-option">Height</div>
         <div class="range" id="range-height">
           <div class="slider-value">
             <span id="height-value" class="slider-value">350</span>
           </div>
           <div class="field">
             <div class="value left" id="min-height-size">0</div>
-            <input type="range" id="height-size" step="1">
+            <input type="range" id="height-size" step="1" >
             <div class="value right" id="max-height-size">200</div>
           </div>
         </div>
-        <div>Width</div>
+        <div class="config-option">Width</div>
         <div class="range" id="range-width">
             <div class="slider-value">
               <span id="width-value" class="slider-value">350</span>
             </div>
             <div class="field">
               <div class="value left" id="min-width-size">0</div>
-              <input type="range" id="width-size" step="1">
+              <input type="range" id="width-size" step="1" >
               <div class="value right" id="max-width-size">200</div>
             </div>
             <button class="range-button" id="size-button">Apply</button>
         </div>
       </div>
-        <div>Scale</div>
-        <div class="range" id="range-grid">
-          <div class="slider-value">
-            <span id="grid-size-value" class="slider-value">120</span>
-          </div>
-          <div class="field">
-            <div class="value left" id="min-grid-size">0</div>
-            <input type="range" id="grid-size" step="1">
-            <div class="value right" id="max-grid-size">200</div>
-          </div>
-          <button class="range-button" id="scale-button">Apply</button>
+      <div class="config-option">Scale</div>
+      <div class="range" id="range-grid">
+        <div class="slider-value">
+          <span id="grid-size-value" class="slider-value">120</span>
         </div>
-        <div>Infinite mode</div>
-        <label class="switch">
-          <input type="checkbox" id="infinite-checkbox">
-        </label>
-        <div>Patterns</div>
-        <div>Color palettes</div>
+        <div class="field">
+          <div class="value left" id="min-grid-size">0</div>
+          <input type="range" id="grid-size" step="1">
+          <div class="value right" id="max-grid-size">200</div>
+        </div>
+        <button class="range-button" id="scale-button">Apply</button>
+      </div>
+      <div class="config-option">Infinite mode</div>
+      <label class="switch">
+        <input type="checkbox" id="infinite-checkbox" >
+      </label>
+      <div class="config-option">Patterns</div>
+      <div id="patterns">
+        <button class="pattern" id="glider">Glider</button>
+        <button class="pattern" id="pulsar">Pulsar</button>
+        <button class="pattern" id="penta">Pentadecathlon</button>
+        <button class="pattern" id="galaxy">Kok's Galaxy</button>
+        <button class="pattern" id="star">Star</button>
+        <button class="pattern" id="spaceship">Spaceship</button>
+        <button class="pattern" id="weekender">Weekender</button>
+        <button class="pattern" id="copperhead">Copperhead</button>
+        <button class="pattern" id="loafer">Loafer</button>
+      </div>
+      <div class="config-option">Color palettes</div>
     </div>
 
     <div id="sketch-holder"></div>
@@ -110,6 +121,7 @@
     <p id="more-info" class="explanation">More information <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="link" target="_blank">here</a>.</p>
 
     <script src="config.js"></script>
+    <script src="patterns.js"></script>
     <script src="sketch.js"></script>
    </body>
 </html>
