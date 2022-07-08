@@ -19,7 +19,8 @@ let languages = {
         "rule-3" : "3. Any live cell with more than three live neighbours dies, as if by overpopulation.",
         "rule-4" : "4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.",
         "more-info-1.0" : "More info ",
-        "more-info-1.5" : "here"
+        "more-info-1.5" : "here",
+        "author": "Website developed by "
     },
     "spanish" : {
         "title" : "El Juego de la Vida",
@@ -41,7 +42,8 @@ let languages = {
         "rule-3" : "3. Una célula viva con más de tres vecinos vivos muere, por sobrepoblación.",
         "rule-4" : "4. Una célula muerta con exactamente tres vecinos vivos se transforma en una célula viva, por reproducción.",
         "more-info-1.0" : "Más información ",
-        "more-info-1.5" : "aquí"
+        "more-info-1.5" : "aquí",
+        "author": "Sitio desarrollado por "
     }
 }
 

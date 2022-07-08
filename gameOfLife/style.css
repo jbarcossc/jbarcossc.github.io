@@ -514,3 +514,7 @@ input:checked + .slider:before {
   margin: 2.5%;
   transition: 0.4s;
 }
+
+#credits {
+  margin-top: 150px;
+}
