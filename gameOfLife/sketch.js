@@ -120,7 +120,7 @@ function windowResized(){
 // Close config when clicking outside -------------------------------------------
 
 document.onclick = function(e){
-    if(configStatus && !(document.getElementById("pause-button").contains(e.target)) && !(document.getElementById("menu").contains(e.target)) &&  !(document.getElementById("config-button").contains(e.target))){
+    if(configStatus && !(document.getElementById("pause-button").contains(e.target)) && !(document.getElementById("menu").contains(e.target)) &&  !(document.getElementById("config-button").contains(e.target)) && !document.getElementById("speed").contains(e.target)){
       changeConfig();
     }
 }
