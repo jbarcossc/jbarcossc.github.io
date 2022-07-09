@@ -25,6 +25,10 @@ body {
   color: var(--font-color)
 }
 
+#title {
+  transition: 0.5s;
+}
+
 *::selection {
   color: var(--grid-color);
   background: var(--alive-color);
@@ -136,6 +140,13 @@ canvas {
     width: 100px;
     margin: 20px 30px 50px 30px;
     transition: 0.3s;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  #title {
+    font-size: 18px;
+    transition: 0.5s;
   }
 }
 
