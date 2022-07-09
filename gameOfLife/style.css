@@ -143,13 +143,6 @@ canvas {
   }
 }
 
-@media only screen and (max-width: 325px) {
-  #title {
-    font-size: 18px;
-    transition: 0.5s;
-  }
-}
-
 @media only screen and (max-width: 735px){
   .rule-img {
     height: 75px;
@@ -528,4 +521,23 @@ input:checked + .slider:before {
 
 #credits {
   margin-top: 150px;
+}
+
+@media only screen and (max-width: 325px) {
+  #title {
+    font-size: 18px;
+    transition: 0.5s;
+  }
+
+  #config {
+    top: 56px;
+    right: calc(50vw - 160px);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #lang {
+    height: 25px;
+    top: 55px;
+    left: calc(50vw - 154px);
+  }
 }
