@@ -28,7 +28,6 @@ body {
     color: var(--details);
     font-size: 5vh;
     display: flex;
-    position: absolute;
     top: 80%;
     left: calc(50vw - 75px);
 }
