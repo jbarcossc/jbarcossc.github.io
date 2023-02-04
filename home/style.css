@@ -1,0 +1,54 @@
+@font-face {
+    font-family: retroFont;
+    src: url(src/RETRRG.TTF);
+}
+
+h1 {
+    font-family: retroFont;
+    font-size: 5vw;
+    margin-top: 1vw;
+    color: white;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+
+.blink-me {
+  animation: blinker 4s infinite;
+}
+
+@keyframes blinker {
+  92% {
+    opacity: 100;
+  }
+  93% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 100;
+  }
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.arrow {
+    size: 30vh;
+}
+
+body {
+    background-image: url(src/background.png);
+    background-size: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
