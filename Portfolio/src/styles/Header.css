@@ -22,6 +22,6 @@ header {
   align-items: center;
 }
 
-navbar a:hover {
+nav a:hover {
   transform: scale(1.2)
 }
